@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+<style type="text/css">
+body {
+	font-family: 'Pacifico', cursive;
+	background-color: rgb(143,188,143);
+}
+header {
+	background: url(http://www.themesltd.com/headers2/adorable_pug_heads.png);
+	background-size: center;
+	font-size: 60px;
+	text-align: center;
+	color: white;
+	padding: 15px;
+	margin-bottom: 50px;
+}
+.slideshow {
+	position: absolute;
+	margin-top: 0px;
+	margin-left: 370px;
+	margin-bottom: 50px;
+}
+img {
+	border-radius: 20px;
+	width: 720px;
+	height: 620px;
+}
+.back-button {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	background-color: rgba(240,255,240,.4);
+	background-size: 20px;
+}
+.forward-button {
+	position: absolute;
+	right: 0;
+	top: 50%;
+	background-color: rgba(240,255,240,.8);
+	background-size: 20px;
+}
+</style>
+</head>
+
+<body>
+<header>
+Pugtastic!
+</header>
+
+<div class="slideshow">
+<div class="pug"><img src="puggle1.jpg"></div>
+<div class="pug"><img src="puggle2.jpg"></div>
+<div class="pug"><img src="puggle3.jpg"></div>
+<div class="pug"><img src="puggle4.jpg"></div>
+<div class="pug"><img src="puggle5.jpg"></div>
+<div class="pug"><img src="puggle6.jpg"></div>
+<div class="pug"><img src="puggle7.jpg"></div>
+<div class="pug"><img src="puggle8.jpg"></div>
+<a class="back-button" onclick="toggleDivs(-1)">&#10094;</a>
+<a class="forward-button" onclick="toggleDivs(+1)">&#10095;</a>
+</div>
+
+<script type="text/javascript">
+var slideIndex= 1;
+showDivs(slideIndex);
+
+function toggleDivs(n) {
+	showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+	var i;
+	var x= document.getElementsByClassName("pug");
+	if (n > x.length) {slideIndex = 1}
+	if (n < 1) {
+		slideIndex = x.length
+	}
+	for (i = 0; i < x.length; i++) {
+		x[i].style.display = "none";
+	}
+	x[slideIndex-1].style.display = "block";	
+}
+</script>
+</body>
+
+</html>
